@@ -17,14 +17,14 @@ def register(message):
 @bot.message_handler(func=lambda message: message.text == "📞📍 Share Number and Location")
 def request_contact(message):
     keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    keyboard.add(types.KeyboardButton(text="📞 Share My Number", request_contact=True))
+    keyboard.add(types.KeyboardButton(text="📞 Share Number", request_contact=True))
     bot.send_message(message.chat.id, "Please share your phone number:", reply_markup=keyboard)
 
 @bot.message_handler(content_types=['contact'])
 def contact_handler(message):
     bot.send_message(id, text=f"Received Phone Number: {message.contact.phone_number}")
     keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    keyboard.add(types.KeyboardButton(text="📍 Share My Location", request_location=True))
+    keyboard.add(types.KeyboardButton(text="📍 Share Location", request_location=True))
     bot.send_message(message.chat.id, "Thanks! Now, please share your location:", reply_markup=keyboard)
 
 @bot.message_handler(content_types=['location'])
