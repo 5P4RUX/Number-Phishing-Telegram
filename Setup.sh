@@ -28,9 +28,9 @@ echo -e "${RED}
 "
 
 # Ask for the token and id
-echo "Type your Token: "
+echo "ENTER BOT TOKEN: "
 read -r Token
-echo "Type Your id: "
+echo "ENTER ADMIN CHAT ID: "
 read -r id
 
 # Export the variables so they can be accessed by the Python script
