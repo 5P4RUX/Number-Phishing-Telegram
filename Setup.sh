@@ -24,7 +24,7 @@ echo -e "${RED}
 
   Coded by SPARUX-666
   github: https://github.com/SPARUX-666
-\033[33;4mVersion:\033[0m 3            \033[33;4mCTRL+C:\033[0m exit          \033[33;4mAuthor:\033[0m SPARUX-666
+\033[33;4mVersion:\033[0m 1.0            \033[33;4mCTRL+C:\033[0m exit          \033[33;4mAuthor:\033[0m SPARUX-666
 "
 
 # Ask for the token and id
