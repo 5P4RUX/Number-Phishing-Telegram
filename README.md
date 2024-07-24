@@ -26,7 +26,6 @@
 <h4 align="left">About > </h4><br>
 
 * Supports the newest Android versions.
-* Uses working APIs.
 
 <br>
 <h4 align="left">TESTED ON > </h4><br>
