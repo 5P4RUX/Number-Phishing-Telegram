@@ -48,13 +48,12 @@ pip install -r requirements.txt
 ./Setup.sh
 ```
 
-## KEYWORDS
-
--Telegram Bot
--Python
--Automation
--PhishingPhone
--Number Collection
+## Keywords
+- Telegram Bot
+- Python
+- PhishingPhone
+- Number Collection
+- Automation
 
 ## License
 
